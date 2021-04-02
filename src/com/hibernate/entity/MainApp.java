@@ -27,9 +27,10 @@ public class MainApp {
 			session.save(koushik);
 			session.getTransaction().commit();
 			
-			System.out.println("/n/nSaved in both table");
 		}catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			factory.close();
 		}
 	}
 
