@@ -21,7 +21,8 @@ public class InstructorDetails {
 	@Column(name="hobby")
 	private String hobby;
 	
-	@OneToOne(mappedBy="instructorDetail", cascade= {CascadeType.ALL})
+	@OneToOne(mappedBy="instructorDetail", cascade= {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST
+			,CascadeType.REFRESH})
 	private Instructor instructor;
 	
 	public int getId() {
